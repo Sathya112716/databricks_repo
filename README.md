@@ -23,4 +23,25 @@
 7. Wrote DataFrames to DBFS location in Delta format with overwrite and replace condition on at_load_date.
 
 
+# Assignment 2 
+
+## Description:
+This code fetches data from the provided API endpoint, processes it, and writes it to a Delta table in DBFS.
+
+## Steps:
+1. Install the `requests` library.
+2. Import necessary modules.
+3. Make a GET request to the API endpoint.
+4. Define custom schemas for the JSON data.
+5. Create a DataFrame from the JSON response with the custom schema.
+6. Drop unnecessary columns ('page', 'per_page', 'total', 'total_pages', 'support').
+7. Explode the 'data' array column to create separate rows for each entry.
+8. Extract fields from the exploded 'data' column.
+9. Derive a new column 'site_address' from the 'email' column.
+10. Add a 'load_date' column with the current date.
+11. Write the DataFrame to a Delta table in DBFS.
+12. Read the Delta table back into a DataFrame for testing.
+
+
+
 
