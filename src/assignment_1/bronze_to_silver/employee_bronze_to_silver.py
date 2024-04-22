@@ -25,60 +25,16 @@ department_df = spark.read.csv("/source_to_bronze/department.csv", department_sc
 country_df = spark.read.csv("/source_to_bronze/country.csv", country_schema)
 
 
-# COMMAND ----------
-
-display(employee_df)
-
-# COMMAND ----------
-
-display(department_df)
-
-# COMMAND ----------
-
-display(country_df)
-
-# COMMAND ----------
-
 # Convert CamelCase columns to snake_case using UDF
 employee_df = convert_camel_to_snake_case(employee_df)
 department_df = convert_camel_to_snake_case(department_df)
 country_df = convert_camel_to_snake_case(country_df)
-
-
-# COMMAND ----------
-
-display(employee_df)
-
-# COMMAND ----------
-
-display(department_df)
-
-# COMMAND ----------
-
-display(country_df)
-
-# COMMAND ----------
 
 # Add load_date column with current date
 from pyspark.sql.functions import current_date
 employee_df = employee_df.withColumn("load_date", current_date())
 department_df = department_df.withColumn("load_date", current_date())
 country_df = country_df.withColumn("load_date", current_date())
-
-
-# COMMAND ----------
-
-display(employee_df)
-
-# COMMAND ----------
-
-display(department_df)
-
-# COMMAND ----------
-
-display(country_df)
-
-# COMMAND ----------
 
 # Write DataFrame as Delta table to DBFS location
 write_delta_table(employee_df,"Employee_info","dim_employee", "EmployeeID", "/silver/Employee_info/dim_employee")
