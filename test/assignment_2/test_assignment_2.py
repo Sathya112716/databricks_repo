@@ -1,4 +1,4 @@
-# Databricks notebook source
+# Databricks notebook source file
 import logging
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, ArrayType, MapType
 from pyspark.sql.functions import current_date, col, explode, split
