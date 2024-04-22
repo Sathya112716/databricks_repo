@@ -1,5 +1,5 @@
 # Databricks notebook source file
-# MAGIC %run /Users/sathyapriya.r@diggibyte.com/assignments/assignment_1/source_to_bronze/utils
+# MAGIC %run /Users/sathyapriya.r@diggibyte.com/src/assignment_1/source_to_bronze/utils
 
 # COMMAND ----------
 
