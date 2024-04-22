@@ -1,5 +1,5 @@
-# Databricks notebook source
-# MAGIC %run /Users/sathyapriya.r@diggibyte.com/assignments/assignment_1/source_to_bronze/utils
+# Databricks notebook source file
+# MAGIC %run /Users/sathyapriya.r@diggibyte.com/src/assignment_1/source_to_bronze/utils
 
 # COMMAND ----------
 
@@ -25,7 +25,7 @@ logging.basicConfig(level=logging.INFO)
 def test_read_csv_with_custom_schema():
     # Test with a sample schema and file
     schema = "EmployeeID INT, EmployeeName STRING, Department STRING, Country STRING, Salary INT, Age INT"
-    file_path = "/FileStore/assignments/assignment_1/resources/test_employee.csv"
+    file_path = "/FileStore/src/assignment_1/resources/test_employee.csv"
     df = read_csv_with_custom_schema(file_path, schema)
     
     # Perform assertions
@@ -70,7 +70,7 @@ def test_write_delta_table():
     database = "test_db"
     table = "test_table"
     primary_key = "EmployeeID"
-    path = "/FileStore/assignments/assignment_1/resources/test_delta_table"
+    path = "/FileStore/src/assignment_1/resources/test_delta_table"
     write_delta_table(df, database, table, primary_key, path)
     
     # Add assertions based on your requirements, such as checking if the table exists, etc.
