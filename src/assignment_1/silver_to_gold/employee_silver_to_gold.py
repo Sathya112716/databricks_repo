@@ -1,9 +1,9 @@
 # Databricks notebook source file
-# MAGIC %run /Users/sathyapriya.r@diggibyte.com/assignments/assignment_1/source_to_bronze/utils
+# MAGIC %run /Users/sathyapriya.r@diggibyte.com/src/assignment_1/source_to_bronze/utils
 
 # COMMAND ----------
 
-# MAGIC %run /Users/sathyapriya.r@diggibyte.com/assignments/assignment_1/bronze_to_silver/employee_bronze_to_silver
+# MAGIC %run /Users/sathyapriya.r@diggibyte.com/src/assignment_1/bronze_to_silver/employee_bronze_to_silver
 
 # COMMAND ----------
 
@@ -52,4 +52,4 @@ display(avg_age_by_department)
 # COMMAND ----------
 
 
-employee_df.write.format("parquet").mode("overwrite").option("replaceWhere","load_date = '2024-04-16'").save("/FileStore/assignments/assignment_1/gold/employee/table_name")
+employee_df.write.format("parquet").mode("overwrite").option("replaceWhere","load_date = '2024-04-16'").save("/FileStore/src/assignment_1/gold/employee/table_name")
